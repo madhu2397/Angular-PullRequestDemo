@@ -21,8 +21,8 @@ jobs:
           cache: 'npm'
 
     #install libraries
-      - name: Install Dependencies
-        run: npm install
+     # - name: Install Dependencies
+     #   run: npm install
 
     #compile the code
       - name: Build project
