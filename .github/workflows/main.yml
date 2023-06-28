@@ -1,0 +1,33 @@
+name: Pull Request Example
+
+on: workflow_dispatch
+
+jobs:
+  pull-request:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: pull-request
+
+    steps:
+      - uses: actions/checkout@v2
+
+      #setup nodejs
+      - name: Setup Node.js 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: "16.18"
+          cache: 'npm'
+
+    #install libraries
+    #   - name: Install Dependencies
+    #     run: npm install
+
+    #compile the code
+      - name: Build project
+        run: ng serve
+
+    #run tests
+      - name: Run tests
+        run: run tests
